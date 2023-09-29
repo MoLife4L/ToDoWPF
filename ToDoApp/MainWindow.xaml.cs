@@ -35,14 +35,23 @@ namespace ToDoApp
                 todoItem.Margin = new Thickness(10);
                 todoItem.Foreground = new SolidColorBrush(Colors.White);
 
-                ToDoList.Children.Add(todoItem);
+                ToDoList.Items.Add(todoItem);
 
                 ToDoInput.Clear();
             }
-
-            
         }
 
+        private void Erase(object sender, RoutedEventArgs e)
+        {
+            var selectedItems = ToDoList.SelectedItems.Cast<TextBlock>().ToList();
+
+            foreach (var selectedItem in selectedItems)
+            {
+                ToDoList.Items.Remove(selectedItem);
+            }
+        }
+
+        /*
         private void ClearListButton(object sender, RoutedEventArgs e)
         {
                 // Create a list to store the TextBlock elements to be removed.
@@ -65,5 +74,6 @@ namespace ToDoApp
 
             MessageBox.Show("Congratulations on completing your TODO List!");
         }
+        */
     }
 }

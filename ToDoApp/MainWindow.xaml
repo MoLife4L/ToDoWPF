@@ -15,6 +15,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10" />
+            <RowDefinition Height="40" />
             <RowDefinition Height="*" />
             <RowDefinition Height="10" />
             <RowDefinition Height="75" />
@@ -23,14 +24,20 @@
             <RowDefinition Height="10" />
         </Grid.RowDefinitions>
 
-        <Button Click="AddToDoButton_Click" Grid.Row="5" Grid.Column="1" Content="Create ToDo"/>
+        <Button Click="AddToDoButton_Click" Grid.Row="6" Grid.Column="1" Content="Create ToDo"/>
 
-        <TextBox x:Name="ToDoInput" Grid.Row="3" Grid.Column="1" Background="Black" Foreground="White" />
-
-        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="ToDoList" Background="#FF403D3D">
-                <Button Click="ClearListButton" Content="Completed All" Background="#FFEC2929" FontSize="14" />
-            </StackPanel>
+        <TextBox x:Name="ToDoInput" Grid.Row="4" Grid.Column="1" Background="#FFFFFBFB" Foreground="#FF040404" />
+        <Button Grid.Row="1" Grid.Column="1" Content="Complete" Click="Erase" Background="#FF81B359"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="2" VerticalScrollBarVisibility="Auto">
+            <ListBox x:Name="ToDoList" Grid.Column="1" Grid.Row="1" SelectionMode="Multiple" Background="#FF2B2B2B" Foreground="White">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding Text}" />
+                        </StackPanel>
+                        </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </ScrollViewer>
 
 
