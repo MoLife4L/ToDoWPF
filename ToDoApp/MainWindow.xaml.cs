@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,29 +51,5 @@ namespace ToDoApp
             }
         }
 
-        /*
-        private void ClearListButton(object sender, RoutedEventArgs e)
-        {
-                // Create a list to store the TextBlock elements to be removed.
-            List<TextBlock> textBlocksToRemove = new List<TextBlock>();
-
-            foreach (UIElement element in ToDoList.Children)
-            {
-                if (element is TextBlock textblock)
-                {
-                    // Check if the child element is a TextBlock and add it to the removal list.
-                    textBlocksToRemove.Add(textblock);
-                }
-            }
-
-            // Remove the identified TextBlock elements from the ToDoList.
-            foreach (TextBlock textBlockToRemove in textBlocksToRemove)
-            {
-                ToDoList.Children.Remove(textBlockToRemove);
-            }
-
-            MessageBox.Show("Congratulations on completing your TODO List!");
-        }
-        */
     }
 }
