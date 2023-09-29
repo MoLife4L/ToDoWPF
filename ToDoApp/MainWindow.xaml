@@ -1,4 +1,4 @@
-﻿<Window x:Class="ToDoApp.MainWindow"
+<Window x:Class="ToDoApp.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:ToDoApp"
         mc:Ignorable="d"
         Title="ToDo App" Height="450" Width="400" ResizeMode="NoResize">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -27,7 +28,9 @@
         <Button Click="AddToDoButton_Click" Grid.Row="6" Grid.Column="1" Content="Create ToDo"/>
 
         <TextBox x:Name="ToDoInput" Grid.Row="4" Grid.Column="1" Background="#FFFFFBFB" Foreground="#FF040404" />
+
         <Button Grid.Row="1" Grid.Column="1" Content="Complete" Click="Erase" Background="#FF81B359"/>
+
         <ScrollViewer Grid.Column="1" Grid.Row="2" VerticalScrollBarVisibility="Auto">
             <ListBox x:Name="ToDoList" Grid.Column="1" Grid.Row="1" SelectionMode="Multiple" Background="#FF2B2B2B" Foreground="White">
                 <ListBox.ItemTemplate>
